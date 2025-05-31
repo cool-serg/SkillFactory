@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оценка стоимости недвижимости</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 { text-align: center; }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Оценка стоимости недвижимости</h1>
+    <form method="post">
+        <div class="form-group">
+            <label>Площадь (кв. футы) — <i>sqft</i></label>
+            <input type="number" name="sqft" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Возраст здания (лет) — <i>age</i></label>
+            <input type="number" name="age" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Количество ванных — <i>baths</i></label>
+            <input type="number" name="baths" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Средний рейтинг школ — <i>rating_mean</i></label>
+            <input type="number" name="rating_mean" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Количество этажей — <i>stories</i></label>
+            <input type="number" name="stories" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Среднее расстояние до школ (км) — <i>distance_mean</i></label>
+            <input type="number" name="distance_mean" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Площадь участка (кв. футы) — <i>lotsize</i></label>
+            <input type="number" name="lotsize" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Количество школ поблизости — <i>schools_count</i></label>
+            <input type="number" name="schools_count" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Тип недвижимости: single family (1 — да, 0 — нет) — <i>propertyType_single family</i></label>
+            <input type="number" name="propertyType_single family" step="1" min="0" max="1" required>
+        </div>
+        <div class="form-group">
+            <label>Количество спален — <i>beds</i></label>
+            <input type="number" name="beds" step="any" required>
+        </div>
+        <div class="form-group">
+            <label>Тип охлаждения: other (1 — да, 0 — нет) — <i>cooling_other</i></label>
+            <input type="number" name="cooling_other" step="1" min="0" max="1" required>
+        </div>
+        <button class="submit-btn" type="submit">Предсказать стоимость</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <p>💰 Оценочная стоимость: <strong>{{ prediction }} $</strong></p>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
