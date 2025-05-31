@@ -62,6 +62,7 @@ python client.py
 ├── client.py                      # Интерфейс пользователя
 ├── catboost_model_top11.cbm       # Сериализованная модель
 ├── tamplates/form.html            # Web-страница
+├── example_model_usage.py         # Пример использования модели локально 
 ├── requirements.txt               # Зависимости
 └── README.md                      # Текущий файл
 ```
