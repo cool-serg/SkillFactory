@@ -60,7 +60,8 @@ python client.py
 ├── final_project_frist_year.ipynb   # Финальный ноутбук с анализом и обучением
 ├── server.py                      # Flask API
 ├── client.py                      # Интерфейс пользователя
-├── catboost_model_top11.cbm      # Сериализованная модель
+├── catboost_model_top11.cbm       # Сериализованная модель
+├── tamplates/form.html            # Web-страница
 ├── requirements.txt               # Зависимости
 └── README.md                      # Текущий файл
 ```
